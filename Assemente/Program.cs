@@ -16,37 +16,48 @@
         //}
         #endregion
         #region Q-2
-        enum Season { Spring, Summer, Autumn, Winter }
+        //enum Season { Spring, Summer, Autumn, Winter }
 
+        //static void Main(string[] args)
+        //{
+
+        //    Console.Write("Enter season name (Spring/Summer/Autumn/Winter): ");
+        //    string input = Console.ReadLine();
+
+        //    Season selectedSeason;
+        //    if (Enum.TryParse(input, true, out selectedSeason))
+        //    {
+        //        switch (selectedSeason)
+        //        {
+        //            case Season.Spring:
+        //                Console.WriteLine("Spring: March to May");
+        //                break;
+        //            case Season.Summer:
+        //                Console.WriteLine("Summer: June to August");
+        //                break;
+        //            case Season.Autumn:
+        //                Console.WriteLine("Autumn: September to November");
+        //                break;
+        //            case Season.Winter:
+        //                Console.WriteLine("Winter: December to February");
+        //                break;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("Invalid season entered.");
+        //    }
+        //}
+        #endregion
+
+        #region Q-3
+        enum Permissions { None = 0, Read = 1, Write = 2, Delete = 4, Execute = 8 }
         static void Main(string[] args)
         {
+            Permissions userPermissions = Permissions.Read | Permissions.Write;
 
-            Console.Write("Enter season name (Spring/Summer/Autumn/Winter): ");
-            string input = Console.ReadLine();
-
-            Season selectedSeason;
-            if (Enum.TryParse(input, true, out selectedSeason))
-            {
-                switch (selectedSeason)
-                {
-                    case Season.Spring:
-                        Console.WriteLine("Spring: March to May");
-                        break;
-                    case Season.Summer:
-                        Console.WriteLine("Summer: June to August");
-                        break;
-                    case Season.Autumn:
-                        Console.WriteLine("Autumn: September to November");
-                        break;
-                    case Season.Winter:
-                        Console.WriteLine("Winter: December to February");
-                        break;
-                }
-            }
-            else
-            {
-                Console.WriteLine("Invalid season entered.");
-            }
+            Console.WriteLine("User has the following permissions:");
+            Console.WriteLine(userPermissions);
         }
         #endregion
     }
