@@ -51,13 +51,39 @@
         #endregion
 
         #region Q-3
-        enum Permissions { None = 0, Read = 1, Write = 2, Delete = 4, Execute = 8 }
+        //enum Permissions { None = 0, Read = 1, Write = 2, Delete = 4, Execute = 8 }
+        //static void Main(string[] args)
+        //{
+        //    Permissions userPermissions = Permissions.Read | Permissions.Write;
+
+        //    Console.WriteLine("User has the following permissions:");
+        //    Console.WriteLine(userPermissions);
+        //}
+        #endregion
+        #region Q-4
+        enum Colors { Red, Green, Blue, Yellow, Orange, Purple }
+
         static void Main(string[] args)
         {
-            Permissions userPermissions = Permissions.Read | Permissions.Write;
+            Console.Write("Enter a color name: ");
+            string input = Console.ReadLine();
 
-            Console.WriteLine("User has the following permissions:");
-            Console.WriteLine(userPermissions);
+            Colors color;
+            if (Enum.TryParse(input, true, out color))
+            {
+                if (color == Colors.Red || color == Colors.Blue || color == Colors.Green)
+                {
+                    Console.WriteLine($"{color} is a primary color.");
+                }
+                else
+                {
+                    Console.WriteLine($"{color} is not a primary color.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid color entered.");
+            }
         }
         #endregion
     }
