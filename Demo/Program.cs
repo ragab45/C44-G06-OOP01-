@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics;
+using System.Reflection;
 
 namespace Demo
 {
@@ -79,17 +80,39 @@ namespace Demo
 
             //Console.WriteLine(person.Gender);
 
-            Grade grade = Grade.A;
+            //Grade grade = Grade.A;
 
-            if (grade == Grade.A)
-                Console.WriteLine("Excellent");
-            else
-                Console.WriteLine("Good Luck Next Time");
+            //if (grade == Grade.A)
+            //    Console.WriteLine("Excellent");
+            //else
+            //    Console.WriteLine("Good Luck Next Time");
 
-            grade = 5;
+            //grade = 5;
+            #endregion
+            #region V-4
+            student.Gender = (Gender)gender;
+
+            Console.WriteLine("Grade => ");
+            object grade;
+            do
+            {
+                isParsed = Enum.TryParse(typeof(Grade), Console.ReadLine(), out grade);
+            } while (!isParsed);
+
+            student.Grade = (Grade)grade;
+
+            Console.WriteLine("Gender => ");
+            object gender;
+            do
+            {
+                isParsed = Enum.TryParse(typeof(Gender), Console.ReadLine(), out gender);
+            } while (!isParsed);
+
+            student.Gender = (Gender)gender;
             #endregion
         }
 
     }
+}
 }
 
